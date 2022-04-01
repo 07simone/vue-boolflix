@@ -1,5 +1,5 @@
 <template>
- <nav class="navbar navbar-light bg-light">
+ <nav class="navbar navbar-light bg-dark">
   <div class="container-fluid px-5">
     <a class="navbar-brand">NETFLIX</a>
     <div class="d-flex">
@@ -21,5 +21,7 @@ export default {
 
 
 <style scoped lang="scss">
-
+div .navbar-brand{
+  color:red
+}
 </style>

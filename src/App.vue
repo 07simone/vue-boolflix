@@ -25,7 +25,6 @@ export default {
 @import "@/style/main-style.scss";
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
 
 }
 </style>
