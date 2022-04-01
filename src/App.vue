@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <IndexHeader/>,
+    <IndexHeader @searchFilm="newSearch"/>,
 
 
-    <IndexMain/>
+    <IndexMain :searchTitle="string"/>
     
   </div>
 </template>
@@ -17,6 +17,19 @@ export default {
   components: {
     IndexHeader,
     IndexMain
+  },
+data:function(){
+return{
+  string: '',
+}
+},
+
+  methods:{
+    newSearch(searchString){
+        
+        this.string = searchString
+    }
+  
   }
 }
 </script>
