@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row row-cols-5 mb-5">
       <div class="col" v-for="(element,index) in searchTitle" :key="index">
-          <listaFilm
+          <cardFilm
             :titolo="element.original_title"
             :titoloOriginale="element.original_title"
             :lingua="element.original_language"
@@ -24,27 +24,25 @@
 
 <script>
 
-import listaFilm from './listaFilm.vue'
+import cardFilm from './cardFilm.vue'
 
 export default {
   name: 'IndexMain',
   props:{ 'searchTitle' : Array },                   // il dato ricevuto attraverso i props da app.vue
   components:{
-    listaFilm,
+    cardFilm,
   },
 
 
   data:function(){
     return{
-      listaFilmArray: [],
+    
     
     }
   },
   
 
   methods:{
-
-  
 
   }
 }

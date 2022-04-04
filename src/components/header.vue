@@ -15,7 +15,8 @@ export default {
   name: 'IndexHeader',
   data:function(){
     return{
-      search: '',         /* variabile per connettere il v-model nell'input*/
+      search: '', 
+      tv:'',        /* variabile per connettere il v-model nell'input*/
   }
 },
 
