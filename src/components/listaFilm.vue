@@ -4,8 +4,9 @@
       <div class="card-body text-center">
           <h5 class="card-title">{{titolo}}</h5>
           <h3 class="card-title">{{titoloOriginale}}</h3>
-          <p class="card-text">{{lingua}}</p>
-          <p class="card-text">{{voto}}</p> 
+          <img src="https://flagcdn.com/16x12/it.png">
+          <p class="card-text">{{voto}}</p>
+          
       </div>
 </div>
 </template>
