@@ -3,7 +3,7 @@
     <IndexHeader @searchFilm="newSearch"/>      <!-- //sono in attesa di un evento searchfilm, quando viene chiamato allora chiamami newsearch -->
 
 
-    <IndexMain :searchTv="searchTv" :searchTitle="searchTitle" />           <!-- per comunicare con il figlio main -->
+    <IndexMain :searchTitle="searchTitle" :searchTv="searchTv"  />           <!-- per comunicare con il figlio main -->
     
   </div>
 </template>
