@@ -2,26 +2,31 @@
 <main>
 
 <div class="container">
-    <div class="row row-cols-5 mb-5">
-      <div class="col" v-for="(element,index) in searchTv" :key="index">
-          <cardFilm
-            :nome="element.name"
-            :nomeOriginale="element.original_name"
-            :linguaOriginale="element.original_language"
-            :votoMedio="element.vote_averege"
-            
-          />
-      </div>
-      <div class="col" v-for="(element,index) in searchTitle" :key="index">
+  <div  class="row row-cols-5 mb-5">
+        <div  class="col" v-for="(element,index) in searchTv" :key="index +'serie'" >
+            <cardFilm
+              :titolo="element.name"
+              :immagineLocandina="element.poster_path"
+              :titoloOriginale="element.original_name"
+              :lingua="element.original_language"
+              :voto="element.vote_average"
+              
+            />
+        </div>
+  </div>
+  <div  class="row row-cols-5 mb-5">
+      <div  class="col" v-for="(element,index) in searchmovie" :key="index">
           <cardFilm
             :titolo="element.original_title"
+            :immagineLocandina="element.poster_path"
             :titoloOriginale="element.original_title"
             :lingua="element.original_language"
-            :voto="element.vote_averege"
+            :voto="element.vote_average"
             
           />
       </div>
     </div>
+ 
 </div>
 
 
@@ -37,10 +42,11 @@ import cardFilm from './cardFilm.vue'
 
 export default {
   name: 'IndexMain',
-  props:{ 'searchTitle' : Array, 'searchTv' : Array  },   // il dato ricevuto attraverso i props da app.vue
-                  
+  props:{ 'searchmovie' : Array, 'searchTv' : Array  },   // il dato ricevuto attraverso i props da app.vue
+
   components:{
     cardFilm,
+  
   },
 
 
