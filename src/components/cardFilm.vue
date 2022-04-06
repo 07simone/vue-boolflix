@@ -1,22 +1,28 @@
 <template>
 <div>
+<!-- v-if="immagineLocandina !== null"  -->
+<div class="card">
+      <div class="card-body text-center"> 
 
-  <!-- film -->
-  <div class="card p-3">
-      <div  class="card-body text-center">
-          <h5 class="card-title">{{titolo}}</h5>
-          <img v-if="immagineLocandina !== null" class="locandina" :src="'https://image.tmdb.org/t/p/w200' + immagineLocandina ">
-          <h3 class="card-title">{{titoloOriginale}}</h3>
-          <img :src= "'https://flagcdn.com/16x12/' + lingua + '.png'">
-          <p class="card-text">{{voto}}</p>
-          <div class="stelle" v-for="(n) in mediaVoto(voto)" :key="n">
-            <h1>*</h1>
+          <div class="img"  >
+              <img  class="img-fluid" :src="'https://image.tmdb.org/t/p/w342' + immagineLocandina ">
           </div>
-          
-      </div>
+
+          <div class="description">
+              <h5 class="card-title">{{titolo}}</h5>
+              <h3 class="card-title">{{titoloOriginale}}</h3>
+              <img :src= "'https://flagcdn.com/16x12/' + lingua + '.png'">
+              <p class="card-text">{{voto}}</p>
+              <p class="informazioni">{{descrizione}}</p>
+              <div  class="stelle" v-for="(n) in averageGrade(voto)" :key="n">
+                <h1>*</h1>
+              </div>
+          </div>
+      </div > 
 </div>
 
-<!-- serietv -->
+
+<!-- film -->
   <!-- <div class="card p-3">
     <div  class="card-body text-center">
           <h5 class="card-title">{{titolo}}</h5>
@@ -35,12 +41,13 @@
 <script>
 export default {
   name: 'cardFilm',
-  props: ["titolo","titoloOriginale","lingua","voto","immagineLocandina"],
+  props: ["titolo","titoloOriginale","lingua","voto","immagineLocandina","descrizione"],
+
 
 
 methods:{
-  mediaVoto(voto){
-    return parseInt (voto/ 2)
+  averageGrade(voto){
+    return parseInt (voto / 2)
   }
 }
 }
@@ -50,9 +57,40 @@ methods:{
 
 
 <style scoped lang="scss">
-.locandina{
-  width: 100%;
+
+.img{
+  width:100%
 }
+
+.description{
+  display: none;
+}
+.card:hover{
+  .card{
+  height: 600px;
+  }
+
+    & .img{
+      display: none;
+  }
+    & .description{
+      display: block;
+    }
+  
+  }
+
+/* .img{
+  display: block;
+  &:hover{
+    display: none;
+}
+}
+.description{
+  display: none;
+  &:hover{
+    display: block;
+  }
+} */
 
 .stelle{
   display: inline-block;
