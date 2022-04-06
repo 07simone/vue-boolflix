@@ -1,25 +1,27 @@
 <template>
 <div>
-<!-- v-if="immagineLocandina !== null"  -->
-<div class="card">
-      <div class="card-body text-center"> 
 
-          <div class="img"  >
-              <img  class="img-fluid" :src="'https://image.tmdb.org/t/p/w342' + immagineLocandina ">
+<div class="card">
+      <div  class="card-body text-center bg-black text-white"> 
+
+          <div  class="img"  >
+              <img v-if="immagineLocandina !== null" class="img-fluid" :src="'https://image.tmdb.org/t/p/w342' + immagineLocandina ">
           </div>
 
-          <div class="description">
+          <div  class="description">
               <h5 class="card-title">{{titolo}}</h5>
               <h3 class="card-title">{{titoloOriginale}}</h3>
               <img :src= "'https://flagcdn.com/16x12/' + lingua + '.png'">
               <p class="card-text">{{voto}}</p>
-              <p class="informazioni">{{descrizione}}</p>
+              <p class="card-text">{{descrizione}}</p>
               <div  class="stelle" v-for="(n) in averageGrade(voto)" :key="n">
                 <h1>*</h1>
               </div>
           </div>
-      </div > 
-</div>
+      </div> 
+</div >
+
+
 
 
 <!-- film -->
@@ -58,9 +60,9 @@ methods:{
 
 <style scoped lang="scss">
 
-.img{
+/* .img{
   width:100%
-}
+} */
 
 .description{
   display: none;
@@ -68,6 +70,7 @@ methods:{
 .card:hover{
   .card{
   height: 600px;
+
   }
 
     & .img{

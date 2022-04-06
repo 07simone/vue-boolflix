@@ -3,7 +3,7 @@
 
 <div class="container">
   <div  class="row row-cols-3 mt-5 g-5 ">
-        <div  class="col" v-for="(element,index) in searchTv" :key="index +'serie'" >
+        <div  class="col" v-for="(element,index) in searchTv " :key="index +'serie'" >
             <cardFilm
               :titolo="element.name"
               :immagineLocandina="element.poster_path"
@@ -27,8 +27,8 @@
             
           />
       </div>
-    </div>
- 
+    </div> 
+
 </div>
 
 
